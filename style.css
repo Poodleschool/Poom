@@ -5,11 +5,22 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom right, #1abc9c, #3498db);
+    background-size: 400% 400%;
+    animation: twinklingStars 10s ease infinite;
     color: #fff;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     position: relative;
+}
+
+@keyframes twinklingStars {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 header {
@@ -28,8 +39,8 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flex container for the navigation menu */
+    justify-content: center; /* Center items horizontally */
 }
 
 nav ul li {
@@ -71,6 +82,7 @@ section {
 
 .home-button:hover {
     background-color: #c0392b;
+    box-shadow: 0 0 10px 5px #e74c3c;
 }
 
 footer {
@@ -78,4 +90,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
+}
+
+/* Add custom cursor */
+body {
+    cursor: url('cursor.png'), auto;
 }
