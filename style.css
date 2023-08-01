@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Merienda:wght@400;700&display=swap');
 
 body {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Merienda', cursive;
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom right, #1abc9c, #3498db);
@@ -11,6 +11,9 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Vertically center content in the body */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
     position: relative;
 }
 
@@ -39,8 +42,8 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Flex container for the navigation menu */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
@@ -58,6 +61,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center content horizontally in the main content */
 }
 
 section {
@@ -75,7 +79,7 @@ section {
     border: none;
     border-radius: 5px;
     font-size: 18px;
-    font-family: 'Cursive', cursive;
+    font-family: 'Pacifico', cursive;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
 }
