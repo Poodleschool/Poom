@@ -17,6 +17,13 @@ const displayName = savedDisplayName ? savedDisplayName : 'John Doe'; // Default
 const displayNameElement = document.getElementById('displayName');
 displayNameElement.value = displayName;
 
+// Load comments from localStorage when the page loads
+const savedComments = localStorage.getItem('comments');
+if (savedComments) {
+    const commentsList = document.getElementById('commentsList');
+    commentsList.innerHTML = savedComments;
+}
+
 // Function to add a comment
 function addComment() {
     const commentInput = document.getElementById('commentInput').value;
@@ -29,8 +36,14 @@ function addComment() {
             <p>${commentInput}</p>`;
         commentsList.appendChild(commentElement);
         document.getElementById('commentInput').value = '';
-        saveDisplayName(); // Save display name after posting a comment
+        saveComment(commentElement.outerHTML); // Save comment to localStorage
     }
+}
+
+// Save the comment to localStorage
+function saveComment(commentHTML) {
+    const savedComments = localStorage.getItem('comments') || '';
+    localStorage.setItem('comments', savedComments + commentHTML);
 }
 
 // Save the display name to localStorage when changed
