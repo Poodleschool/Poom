@@ -10,6 +10,9 @@ function closePopup() {
 window.onload = function () {
     welcomePopup.style.display = 'flex';
 };
+function addComment() {
+    // Your existing code to add comments
+    
 const commentsList = document.getElementById('commentsList');
 const displayNameElement = document.getElementById('displayName');
 
@@ -30,10 +33,4 @@ function addComment() {
         document.getElementById('commentInput').value = '';
         saveDisplayName(); // Save display name after posting a comment
     }
-}
-
-// Save the display name to localStorage when changed
-function saveDisplayName() {
-    const newDisplayName = displayNameElement.value;
-    localStorage.setItem('displayName', newDisplayName);
 }
