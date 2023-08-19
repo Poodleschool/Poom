@@ -28,6 +28,7 @@ function addComment() {
             <p>${commentInput}</p>`;
         commentsList.appendChild(commentElement);
         document.getElementById('commentInput').value = '';
+        saveDisplayName(); // Save display name after posting a comment
     }
 }
 
