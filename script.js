@@ -10,11 +10,17 @@ function closePopup() {
 window.onload = function () {
     welcomePopup.style.display = 'flex';
 };
+const commentsList = document.getElementById('commentsList');
+const displayNameElement = document.getElementById('displayName');
+
+// Load the display name from localStorage when the page loads
+const savedDisplayName = localStorage.getItem('displayName');
+const displayName = savedDisplayName ? savedDisplayName : 'John Doe'; // Default if not set
+displayNameElement.value = displayName;
+
 function addComment() {
-    const displayName = 'John Doe'; // Replace with user's display name
     const commentInput = document.getElementById('commentInput').value;
     if (commentInput.trim() !== '') {
-        const commentsList = document.getElementById('commentsList');
         const commentElement = document.createElement('div');
         commentElement.className = 'comment';
         commentElement.innerHTML = `
@@ -25,4 +31,8 @@ function addComment() {
     }
 }
 
-
+// Save the display name to localStorage when changed
+function saveDisplayName() {
+    const newDisplayName = displayNameElement.value;
+    localStorage.setItem('displayName', newDisplayName);
+}
